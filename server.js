@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 
 app.post("/ask", async (req, res) => {
   try {
-    const question = req.body?.message || req.body?.input || "";
+    const question = req.body?.message || req.body?.input || req.body?.question || "";
 
     const response = await client.responses.create({
       model: "gpt-4.1-mini",
